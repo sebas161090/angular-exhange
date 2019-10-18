@@ -1,2 +1,17 @@
-<input [(ngModel)]="euros" (keydown.enter)="onKeydown($event)"  type="text" name="euros" />
-<input [(ngModel)]="dolares"  type="text" name="dolares" />
+<form>
+    <div class="container">
+        <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <input currencyMask  class="form-control" [(ngModel)]="euros" (keydown.enter)="onKeydown($event)"  
+                        type="text" name="euros" placeholder="Ingresar Euros" [options]="{ prefix: '€ ', thousands: '.', decimal: ',' }">
+                </div>
+                <div class="col-xs-3 col-sm-2 col-md-2">
+                    <button type="button" class="btn btn-primary" (click)="onClickCalculate()">Calcular</button>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <input disabled currencyMask class="form-control" [(ngModel)]="dolares"  name="dolares" [options]="{ prefix: '$ ', thousands: '.', decimal: ',' }">
+                </div>
+        </div>
+    </div>
+      
+</form>

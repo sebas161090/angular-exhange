@@ -7,6 +7,7 @@ import { MoneyExchangeService } from './money-exchange.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 
 
@@ -20,7 +21,9 @@ describe('MoneyExchangeFormComponent', () => {
       providers: [MoneyExchangeService],
       imports: [CommonModule,
         FormsModule,
-        HttpClientModule,]
+        HttpClientModule,
+        CurrencyMaskModule 
+      ]
     })
     .compileComponents();
   }));
@@ -36,6 +39,7 @@ describe('MoneyExchangeFormComponent', () => {
   });
   it('should validate euros to dolares', () => {
     expect(component).toBeTruthy();
+    component.euros = 1;
     const euros = 1;
     const dolares = component.convertDolares(euros);
     expect(euros).toBe(dolares);

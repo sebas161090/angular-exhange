@@ -6,6 +6,7 @@ import { MoneyExchangeFormComponent } from './money-exchange/money-exchange-form
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    CurrencyMaskModule,
   ],
   providers: [
     MoneyExchangeService
