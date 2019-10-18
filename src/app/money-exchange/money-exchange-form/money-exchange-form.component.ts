@@ -13,20 +13,15 @@ export class MoneyExchangeFormComponent implements OnInit {
   public euros: any;
   public dolares: any;
 
-  
-
   constructor(private moneyExchangeService: MoneyExchangeService) {
 
     const numbers = interval(600000);
-    numbers.subscribe(x =>  alert('probando'));
-    //setTimeout(this.alertFunc, 3000);
-    
+    numbers.subscribe(x =>  this.onClickCalculate());
   }
  
   ngOnInit() {
-    
   }
-  
+
   onKeydown() {
       this.onClickCalculate();
   }
@@ -41,13 +36,6 @@ export class MoneyExchangeFormComponent implements OnInit {
         this.dolares = this.convertDolares(value.rates.USD);
       });
   }
-
-
- alertFunc() {
-    alert("Hello!");
-  }
-
-
 
 
 }

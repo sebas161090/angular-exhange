@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { SharedComponentsModule } from './shared-components/shared-components.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     FormsModule,
     HttpClientModule,
     CurrencyMaskModule,
+    SharedComponentsModule,
   ],
   providers: [
     MoneyExchangeService
